@@ -1,6 +1,9 @@
-.element{
-    background: #C4C4C4;
-    width: 282px;
-height: 282px;
-border-radius: 10px 10px 0px 0px;
+.element {
+    max-width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 282px 1fr;
+    position: relative;
 }

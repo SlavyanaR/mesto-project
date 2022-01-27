@@ -1,3 +1,11 @@
 .profile{
+    width:68.75%;
+    padding: 0;
+    margin: 40px 200px 51px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 880px;
+    min-height: 120px;
     
 }

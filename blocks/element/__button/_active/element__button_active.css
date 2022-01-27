@@ -1,0 +1,5 @@
+.element__button_active{
+    margin: 0;
+    padding: 0;
+    background-image: url(../../../../image/button\ active.svg);
+}

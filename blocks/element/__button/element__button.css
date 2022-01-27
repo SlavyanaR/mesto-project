@@ -1,0 +1,17 @@
+.element__button{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 22px;
+    height: 19px;
+    background-image: url(../../../image/button\ disabled.svg);
+    /* background-color:transparent; */
+    outline: none;
+    transition: 0.2s;
+    
+}
+.element__button:hover{
+    opacity: 0.5;
+    cursor: pointer;
+    background-image: url(../../../image/button\ hover.svg);
+}
