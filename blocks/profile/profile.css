@@ -7,5 +7,16 @@
     justify-content: space-between;
     min-width: 880px;
     min-height: 120px;
-    
+}
+
+@media screen and (max-width: 968px) {
+    .profile{
+        width:88% 
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .profile{
+        flex-direction: column;
+    }
 }

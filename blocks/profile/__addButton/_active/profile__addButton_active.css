@@ -1,0 +1,10 @@
+.profile__addButton_active{
+    margin: 0;
+    padding: 0;
+    align-self: center;
+    background-image: url();
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border: 2px solid #FFFFFF;
+
+}

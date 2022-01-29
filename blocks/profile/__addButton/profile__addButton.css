@@ -1,0 +1,14 @@
+.profile__addButton{
+    color: #FFFF;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-shadow: 0;
+}
+
+.profile__addButton:hover{
+    opacity: 0.6;
+    transition: opacity .5s ease-in-out;
+}
+
+ 
