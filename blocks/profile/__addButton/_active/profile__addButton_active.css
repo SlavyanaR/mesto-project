@@ -1,10 +1,17 @@
 .profile__addButton_active{
     margin: 0;
     padding: 0;
-    align-self: center;
-    background-image: url();
-    background-position: 50%;
+    max-width: 282px;
+    width: 100%;
+    height: 50px; 
+    background-image: url(../../../../image/AddButton.svg);
+    background-position: center;
     background-repeat: no-repeat;
     border: 2px solid #FFFFFF;
+    transition: 0.2s;
+    outline: none;
+}
 
+@media screen {
+    
 }
