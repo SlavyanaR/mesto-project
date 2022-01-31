@@ -1,7 +1,6 @@
 .elements_conteiner{
     margin: 51px auto 67px;
     max-width: 888px;
-    max-height: 744px;
     width:68.75%
 }
 @media screen and (max-width: 320px) {
