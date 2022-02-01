@@ -1,3 +1,16 @@
-.popup__overlay{
-    
+  .popup__overlay{
+    position: fixed;
+    background: rgba(0,0,0,0.15);
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+left:0;
+display: none;
 }
+
+/* .popup__overlay:target {display:block;}.close{
+    display: inline-block;
+    border: 1px solid #0000cc;
+    color: #000;
+} */

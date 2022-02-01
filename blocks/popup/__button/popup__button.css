@@ -1,11 +1,11 @@
-.popup__button{
+/* .popup__button{
     font-size: 18px;
     font-weight: 400;
     line-height: 21.78px;
     background-color: #000000;
     color: #fff;
     border: none;
-    width: 100%;
+    max-width: 358px;
     min-height: 50px;
     transition: 0.2s;
     outline: none;
@@ -17,9 +17,25 @@
     cursor: pointer;
   }
   
-  @media screen and (max-width: 475px) {
+  @media screen and (max-width: 320px) {
     .popup__button {
       font-size: 14px;
       line-height: 17px;
+      max-height: 46px;
+      max-width: 238px;
     }
+  } */
+  .popup__button {
+    background: none;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    
+    padding: 0;
+    margin: 0;
+  }
+  
+  .popup__btn:hover {
+    cursor: pointer;
+    opacity: .8;
   }

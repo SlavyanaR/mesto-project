@@ -1,0 +1,30 @@
+.popup__button_type_close{
+    /* Свойства вида и расположения кнопки */
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      background-image: url(../../../image/CloseIcon.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 40px;
+      height: 40px;
+  
+      
+      padding: 0;
+      display: flex;
+        
+      
+      /* transform: rotate(45deg); */
+      /* background-color: transparent; */
+      transition: .2s;
+      }
+    
+    
+    @media screen and (max-width: 320px) {
+      .popup__close_type_close {
+        top: -50px;
+        right: 0;
+      }
+    }  
+  
