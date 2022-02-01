@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 968px) {
-    .profile {
+    .profile__addButton {
         width: 100%;
         max-width: 282px;
     }

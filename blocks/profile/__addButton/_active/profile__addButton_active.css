@@ -12,6 +12,14 @@
     outline: none;
 }
 
-@media screen {
-    
+@media screen and (max-width: 968px) {
+    .profile__addButton_active {
+        width: 100%;
+        max-width: 282px;
+    }
+}
+
+.profile__addButton_active:hover {
+    opacity: 0.6;
+    cursor: pointer;
 }
