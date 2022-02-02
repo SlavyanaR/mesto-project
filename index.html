@@ -16,13 +16,10 @@
     <main class="main">
         <section class="profile">
             <img src="./image/kusto.jpg" alt="Аватар профиля" class="profile__avatar">
-            </div>
             <div class="profile__info">
                 <div class="profile__group">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
-                    <a href="#okno">
-                        <button class="profile__editButton" type="button"></button>
-                    </a>
+                    <a class="profile__editButton" href="#okno"></a>
                 </div>
                 <p class="profile__about">Исследователь океана</p>
             </div>
@@ -87,7 +84,8 @@
     </footer>
     <div class="popup">
         <div class="popup__container popup__overlay" id="okno">
-            <button tupe="button" class="popup__button popup__button_close"></button>
+            <!-- <button tupe="button" class="popup__button popup__button_close"></button> -->
+            <a class="popup__button_type popup__button_type_close" href="#">&times;</a> <!--ЗАЧЕМ ТУТ popup__button_type -->
             <form class="popup__form" name="popupForm" novalidate>
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <input name="userName" type="text" class="popup__input" id="userName-input" placeholder="Имя"
@@ -96,7 +94,7 @@
                 <input name="userAbout" type="text" class="popup__input" id="userAbout-input" placeholder="Профессия"
                     minlength="2" maxlength="40" pattern="[A-Za-zА-Яа-яЁё]" required>
                 <span class="popup__input-error userAbout-input-error"></span>
-                <button type="submit" class="popup__button popup__button_submit">Сохранить</button>
+                <button type="submit" class="popup__button_type popup__button_type_submit">Сохранить</button> <!--ЗАЧЕМ ТУТ popup__button_type -->
             </form>
 
         </div>
@@ -115,7 +113,6 @@
                 <button tupe="button" class="popup__close-botton"></button>
         </div> -->
 
-    </div>
 
 </body>
 
