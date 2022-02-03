@@ -30,6 +30,13 @@
     box-shadow: none;
     border: none;
     outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    background-color: white;
+    min-height: 50px;
+    max-width: 358px;
+
     
     padding: 0;
     margin: 0;
