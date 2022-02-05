@@ -5,11 +5,11 @@
     background-color: transparent;
     /* border: 2px solid #fff; 
     border-radius: 2px;*/
-    background-image: url(../../../image/EditButton.svg);
+    /* background-image: url(../../../image/EditButton.svg); */
     /* background-position: center; */
     background-repeat: no-repeat;
     background-size: contain;
-    border: none;
+    border: 1px solid #FFFFFF;
     display: inline-block;
     transition: .2s;
     outline: none;

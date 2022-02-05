@@ -1,17 +1,54 @@
-  .popup__overlay{
+  .popup__overlay {
     position: fixed;
-    background: white;
-    width:100%;
-    height: 100%;
-    position: fixed;
+    background: #FFFFFF;
+    /* width:100%;
+    height: 100%; */
+    max-width: 430px;
+    max-height: 330px;
+    border-radius: 10px;
+    /* position: fixed; */
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-display: none;
-cursor: default;
-}
+    display: none;
+    cursor: default;
+    margin: 195px auto;
+    outline: none;
+    /* opacity: 0;
+    pointer-events: none; */
+  }
 
-.popup__overlay:target {
-  display:block;
+  /* position: absolute;
+     background: #FFFFFF;
+     max-width: 430px;
+     max-height: 330px;
+     border-radius: 10px;
+     top: 195px;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     margin: 195px auto;
+     outline: none;
+    
 }
+@media screen and (max-width: 320px) {
+    .popup__container {
+        max-width: 282px;
+        min-height: 322px;
+        top:123px;
+    }
+} */
+  @media screen and (max-width: 320px) {
+    .popup__overlay {
+      max-width: 282px;
+      min-height: 322px;
+      margin: 123px 19px;
+    }
+  }
+
+  .popup__overlay:target {
+    display: block;
+    /* opacity: 1;
+    pointer-events:auto; */
+  }

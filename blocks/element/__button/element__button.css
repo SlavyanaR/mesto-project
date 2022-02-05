@@ -1,5 +1,6 @@
 .element__button {
     padding: 0;
+    margin: 0 5px;
     border: none;
     width: 22px;
     height: 19px;
@@ -8,10 +9,10 @@
     outline: none;
     transition: 0.2s;
 
+
 }
 
 .element__button:hover {
     opacity: 0.6;
     cursor: pointer;
-    /* background-image: url(../../../image/button_hover.svg); */
 }

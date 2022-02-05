@@ -6,8 +6,9 @@
         color: #fff;
         max-width: 358px;
         min-height: 50px;
-        transition: 0.2s;
+        /* transition: 0.2s; */
         margin-bottom: 36px;
+        border-radius: 2px;
       }
       
        @media screen and (max-width: 320px) {
@@ -18,4 +19,7 @@
           max-width: 238px;
         }
       }
-    
+    .popup__button_type_submit:hover{
+      opacity: 0.6;
+    cursor: pointer;
+    }

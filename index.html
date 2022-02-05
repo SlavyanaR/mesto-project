@@ -19,7 +19,9 @@
             <div class="profile__info">
                 <div class="profile__group">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
-                    <a class="profile__editButton" href="#okno"></a>
+                    <a class="profile__editButton" href="#okno">
+                        <img src="./image/EditButton.svg" alt="Изменить аватар" class="profile__image">
+                    </a>
                 </div>
                 <p class="profile__about">Исследователь океана</p>
             </div>
@@ -34,7 +36,7 @@
                         <h2 class="element__title">Карачаевск</h2>
                         <button class="element__button element__button_active" type="button"></button>
                     </div>
-                    <button class="element__remove-button" style="display: none;"></button>
+                    <!-- <button class="element__remove-button" style="display: none;"></button> -->
                 </li>
                 <li class="element">
                     <img class="element__image" alt="Эльбрус" src="./image/elbrus.jpg">
@@ -42,7 +44,7 @@
                         <h2 class="element__title">Гора Эльбрус</h2>
                         <button class="element__button element__button_active" type="button"></button>
                     </div>
-                    <button class="element__remove-button" style="display: none;"></button>
+                    <!-- <button class="element__remove-button" style="display: none;"></button> -->
                 </li>
                 <li class="element">
                     <img class="element__image" alt="Домбай" src="./image/dombai.jpg">
@@ -50,7 +52,7 @@
                         <h2 class="element__title">Домбай</h2>
                         <button class="element__button element__button_active" type="button"></button>
                     </div>
-                    <button class="element__remove-button" style="display: none;"></button>
+                    <!-- <button class="element__remove-button" style="display: none;"></button> -->
                 </li>
                 <li class="element">
                     <img class="element__image" alt="Эльбрус" src="./image/elbrus.jpg">
@@ -58,7 +60,7 @@
                         <h2 class="element__title">Гора Эльбрус</h2>
                         <button class="element__button element__button_active" type="button"></button>
                     </div>
-                    <button class="element__remove-button" style="display: none;"></button>
+                    <!-- <button class="element__remove-button" style="display: none;"></button> -->
                 </li>
                 <li class="element">
                     <img class="element__image" alt="Домбай" src="./image/dombai.jpg">
@@ -66,7 +68,7 @@
                         <h2 class="element__title">Домбай</h2>
                         <button class="element__button element__button_active" type="button"></button>
                     </div>
-                    <button class="element__remove-button" style="display: none;"></button>
+                    <!-- <button class="element__remove-button" style="display: none;"></button> -->
                 </li>
                 <li class="element">
                     <img class="element__image" alt="Карачаевск" src="./image/karachaevsk.jpg">
@@ -74,7 +76,7 @@
                         <h2 class="element__title">Карачаевск</h2>
                         <button class="element__button element__button_active" type="button"></button>
                     </div>
-                    <button class="element__remove-button" style="display: none;"></button>
+                    <!-- <button class="element__remove-button" style="display: none;"></button> -->
                 </li>
             </ul>
         </section>
@@ -83,9 +85,10 @@
         <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
     <div class="popup">
-        <div class="popup__container popup__overlay" id="okno">
+        <div class="popup__container" id="okno">
             <!-- <button tupe="button" class="popup__button popup__button_close"></button> -->
-            <a class="popup__button popup__button_type_close" href="#">&times;</a> <!--ЗАЧЕМ ТУТ popup__button_type -->
+            <a class="popup__button popup__button_type_close" href="#">&#10006;</a>
+            <!--ЗАЧЕМ ТУТ popup__button_type -->
             <form class="popup__form" name="popupForm" novalidate>
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <input name="userName" type="text" class="popup__input" id="userName-input" placeholder="Имя"
@@ -94,7 +97,8 @@
                 <input name="userAbout" type="text" class="popup__input" id="userAbout-input" placeholder="Профессия"
                     minlength="2" maxlength="40" pattern="[A-Za-zА-Яа-яЁё]" required>
                 <span class="popup__input-error userAbout-input-error"></span>
-                <button type="submit" class="popup__button_type popup__button_type_submit">Сохранить</button> <!--ЗАЧЕМ ТУТ popup__button_type -->
+                <button type="submit" class="popup__button_type popup__button_type_submit">Сохранить</button>
+                <!--ЗАЧЕМ ТУТ popup__button_type -->
             </form>
 
         </div>
