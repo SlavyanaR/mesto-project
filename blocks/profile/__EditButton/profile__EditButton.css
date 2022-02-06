@@ -7,11 +7,9 @@
   background-size: contain;
   border: 1px solid;
   border-color: #FFFFFF;
-  display: inline-block;
+  /* display: inline-block; */
   transition: .2s;
-  outline: none;
-  position: relative;
-  z-index: index 5;
+  /* outline: none; */
 
 }
 
