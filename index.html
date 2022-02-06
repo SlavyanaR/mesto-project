@@ -25,58 +25,51 @@
                 </div>
                 <p class="profile__about">Исследователь океана</p>
             </div>
-            <button type="button" class="profile__addButton profile__addButton_active"></button>
+            <button type="button" class="profile__addButton"></button>
         </section>
-
         <section class="elements_conteiner">
             <ul class="elements">
                 <li class="element">
                     <img class="element__image" alt="Карачаевск" src="./image/karachaevsk.jpg">
                     <div class="element__title-group">
                         <h2 class="element__title">Карачаевск</h2>
-                        <button class="element__button element__button_active" type="button"></button>
+                        <button class="element__button" type="button"></button>
                     </div>
-                    <!-- <button class="element__remove-button" style="display: none;"></button> -->
                 </li>
                 <li class="element">
                     <img class="element__image" alt="Эльбрус" src="./image/elbrus.jpg">
                     <div class="element__title-group">
                         <h2 class="element__title">Гора Эльбрус</h2>
-                        <button class="element__button element__button_active" type="button"></button>
+                        <button class="element__button" type="button"></button>
                     </div>
-                    <!-- <button class="element__remove-button" style="display: none;"></button> -->
                 </li>
                 <li class="element">
                     <img class="element__image" alt="Домбай" src="./image/dombai.jpg">
                     <div class="element__title-group">
                         <h2 class="element__title">Домбай</h2>
-                        <button class="element__button element__button_active" type="button"></button>
+                        <button class="element__button" type="button"></button>
                     </div>
-                    <!-- <button class="element__remove-button" style="display: none;"></button> -->
                 </li>
                 <li class="element">
                     <img class="element__image" alt="Эльбрус" src="./image/elbrus.jpg">
                     <div class="element__title-group">
                         <h2 class="element__title">Гора Эльбрус</h2>
-                        <button class="element__button element__button_active" type="button"></button>
+                        <button class="element__button" type="button"></button>
                     </div>
-                    <!-- <button class="element__remove-button" style="display: none;"></button> -->
                 </li>
                 <li class="element">
                     <img class="element__image" alt="Домбай" src="./image/dombai.jpg">
                     <div class="element__title-group">
                         <h2 class="element__title">Домбай</h2>
-                        <button class="element__button element__button_active" type="button"></button>
+                        <button class="element__button" type="button"></button>
                     </div>
-                    <!-- <button class="element__remove-button" style="display: none;"></button> -->
                 </li>
                 <li class="element">
                     <img class="element__image" alt="Карачаевск" src="./image/karachaevsk.jpg">
                     <div class="element__title-group">
                         <h2 class="element__title">Карачаевск</h2>
-                        <button class="element__button element__button_active" type="button"></button>
+                        <button class="element__button" type="button"></button>
                     </div>
-                    <!-- <button class="element__remove-button" style="display: none;"></button> -->
                 </li>
             </ul>
         </section>
@@ -84,40 +77,19 @@
     <footer class="footer">
         <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
-    <div class="popup">
-        <div class="popup__container" id="okno">
-            <!-- <button tupe="button" class="popup__button popup__button_close"></button> -->
+    <div class="popup" id="okno">
+        <div class="popup__container">
             <a class="popup__button popup__button_type_close" href="#">&#10006;</a>
-            <!--ЗАЧЕМ ТУТ popup__button_type -->
             <form class="popup__form" name="popupForm" novalidate>
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <input name="userName" type="text" class="popup__input" id="userName-input" placeholder="Имя"
-                    minlength="2" maxlength="20" pattern="[A-Za-zА-Яа-яЁё]" required>
-                <span class="popup__input-error userName-input-error"></span>
+                    pattern="[A-Za-zА-Яа-яЁё]" required>
                 <input name="userAbout" type="text" class="popup__input" id="userAbout-input" placeholder="Профессия"
-                    minlength="2" maxlength="40" pattern="[A-Za-zА-Яа-яЁё]" required>
-                <span class="popup__input-error userAbout-input-error"></span>
+                    pattern="[A-Za-zА-Яа-яЁё]" required>
                 <button type="submit" class="popup__button_type popup__button_type_submit">Сохранить</button>
-                <!--ЗАЧЕМ ТУТ popup__button_type -->
             </form>
-
         </div>
     </div>
-
-    <!-- <div class="popup  popup_profile-edit">
-        <div class="popup__container popup__overlay">
-                <form class="popup__form" name="popupForm" novalidate>
-                    <h2 class="popup__title">Редактировать профиль</h2>
-                    <input name="userName" type="text" class="popup__input popup__input_data_name" id="userName-input" placeholder="Имя" minlength="2" maxlength="20" pattern="[A-Za-zА-Яа-яЁё]" required>
-                    <span class="popup__input-error userName-input-error"></span>
-                    <input name="userAbout" type="text" class="popup__input popup__input_data_about" id="userAbout-input" placeholder="Профессия" minlength="2" maxlength="40" pattern="[A-Za-zА-Яа-яЁё]" required>
-                    <span class="popup__input-error userAbout-input-error"></span>
-                    <button type="submit" class="popup__button">Сохранить</button>
-                </form>
-                <button tupe="button" class="popup__close-botton"></button>
-        </div> -->
-
-
 </body>
 
 </html>

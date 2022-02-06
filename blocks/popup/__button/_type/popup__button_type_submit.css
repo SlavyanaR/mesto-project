@@ -1,25 +1,27 @@
-.popup__button_type_submit{
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 21.78px;
-        background-color: #000000;
-        color: #fff;
-        max-width: 358px;
-        min-height: 50px;
-        /* transition: 0.2s; */
-        margin-bottom: 36px;
-        border-radius: 2px;
-      }
-      
-       @media screen and (max-width: 320px) {
-        .popup__button_type_submit {
-          font-size: 14px;
-          line-height: 17px;
-          max-height: 46px;
-          max-width: 238px;
-        }
-      }
-    .popup__button_type_submit:hover{
-      opacity: 0.6;
-    cursor: pointer;
-    }
+.popup__button_type_submit {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  background-color: #000000;
+  color: #fff;
+  max-width: 358px;
+  min-height: 50px;
+  margin: 21px 36px 48px 36px;
+  border-radius: 2px;
+  padding: 0;
+}
+
+@media screen and (max-width: 320px) {
+  .popup__button_type_submit {
+    font-size: 14px;
+    line-height: 17px;
+    max-height: 46px;
+    min-width: 238px;
+    margin: 45px auto 25px;
+  }
+}
+
+.popup__button_type_submit:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
