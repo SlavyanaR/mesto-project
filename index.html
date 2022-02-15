@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./pages/index.css">
-    <title>Document</title>
+    <title>Mesto</title>
 </head>
 
 <body class="page">
@@ -19,15 +19,15 @@
             <div class="profile__info">
                 <div class="profile__group">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
-                    <a class="profile__editButton" href="#okno">
-                        <img src="./image/EditButton.svg" alt="Изменить аватар" class="profile__image">
+                    <a href="#okno" class="button">
+                        <button type="button" class="profile__edit-button"></button>
                     </a>
                 </div>
                 <p class="profile__about">Исследователь океана</p>
             </div>
-            <button type="button" class="profile__addButton"></button>
+            <button type="button" class="profile__add-button"></button>
         </section>
-        <section class="elements_conteiner">
+        <section class="conteiner-elements">
             <ul class="elements">
                 <li class="element">
                     <img class="element__image" alt="Карачаевск" src="./image/karachaevsk.jpg">
@@ -79,14 +79,16 @@
     </footer>
     <div class="popup" id="okno">
         <div class="popup__container">
-            <a class="popup__button popup__button_type_close" href="#">&#10006;</a>
+            <a class="button" href="#">
+                <button type="button" class="popup__button popup__button_type_close">&#10006;</button>
+            </a>
             <form class="popup__form" name="popupForm" novalidate>
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <input name="userName" type="text" class="popup__input" id="userName-input" placeholder="Имя"
                     pattern="[A-Za-zА-Яа-яЁё]" required>
                 <input name="userAbout" type="text" class="popup__input" id="userAbout-input" placeholder="Профессия"
                     pattern="[A-Za-zА-Яа-яЁё]" required>
-                <button type="submit" class="popup__button_type popup__button_type_submit">Сохранить</button>
+                <button type="submit" class="popup__button_type_submit popup__button_type">Сохранить</button>
             </form>
         </div>
     </div>

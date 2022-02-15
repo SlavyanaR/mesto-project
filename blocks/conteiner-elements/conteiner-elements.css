@@ -1,11 +1,11 @@
-.elements_conteiner {
+.conteiner-elements {
     margin: 51px auto 67px;
     max-width: 888px;
     width: 68.75%
 }
 
 @media screen and (max-width: 320px) {
-    .elements_conteiner {
+    .conteiner-elements {
         margin: 36px auto 48px;
         width: 88.125%;
     }
