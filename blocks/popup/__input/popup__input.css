@@ -6,8 +6,8 @@
     outline-color: #e108e8;
     margin: 0 36px 27px;
     height: 27px;
-    border-bottom: 1px solid rgb(0,0,0);
-    opacity: 0.2;
+    border-bottom: 1px solid rgb(0,0,0, 0.2);
+
 }
 
 @media screen and (max-width: 320px) {

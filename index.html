@@ -19,9 +19,7 @@
             <div class="profile__info">
                 <div class="profile__group">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
-                    <a href="#okno" class="button">
-                        <button type="button" class="profile__edit-button"></button>
-                    </a>
+                    <button type="button" class="profile__edit-button"></button>
                 </div>
                 <p class="profile__about">Исследователь океана</p>
             </div>
@@ -77,18 +75,16 @@
     <footer class="footer">
         <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
-    <div class="popup" id="okno">
+    <div class="popup">
         <div class="popup__container">
-            <a class="button" href="#">
-                <button type="button" class="popup__button popup__button_type_close">&#10006;</button>
-            </a>
+            <button type="button" class="popup__button popup__button_type_close"></button>
             <form class="popup__form" name="popupForm" novalidate>
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <input name="userName" type="text" class="popup__input" id="userName-input" placeholder="Имя"
                     pattern="[A-Za-zА-Яа-яЁё]" required>
                 <input name="userAbout" type="text" class="popup__input" id="userAbout-input" placeholder="Профессия"
                     pattern="[A-Za-zА-Яа-яЁё]" required>
-                <button type="submit" class="popup__button_type_submit popup__button_type">Сохранить</button>
+                <button type="submit" class="popup__button popup__button_type_submit ">Сохранить</button>
             </form>
         </div>
     </div>

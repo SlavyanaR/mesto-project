@@ -7,6 +7,11 @@
   color: #FFFFFF;
   background-color: transparent;
   transition: .2s;
+  background-image: url("../../../../image/CloseIcon.svg");
+  object-fit: cover;
+  min-width: 32px;
+  min-height: 32px;
+
 }
 
 @media screen and (max-width: 320px) {
@@ -14,6 +19,9 @@
     top: -40px;
     right: 0;
     font-size: 30px;
+    min-width: 20px;
+    min-height: 20px;
+
   }
 }
 
