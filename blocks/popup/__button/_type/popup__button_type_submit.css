@@ -5,12 +5,12 @@
   color: #fff;
   max-width: 358px;
   min-height: 50px;
-  margin: 21px 36px 48px 36px;
+  margin: 21px 0px 48px 0px;
   border-radius: 2px;
   padding: 0;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 500px) {
   .popup__button_type_submit {
     font-size: 14px;
     line-height: 17px;
