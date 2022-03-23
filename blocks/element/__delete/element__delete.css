@@ -1,0 +1,16 @@
+.element__delete {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 18px;
+    height: 19px;
+    background: none;
+    border: none;
+    outline: none;
+    background: url('../../../image/busket1.png') 0 0 no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+.element__delete:hover{
+    opacity: 0.6;
+}
