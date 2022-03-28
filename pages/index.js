@@ -1,7 +1,6 @@
 const profileEditBtn = document.querySelector('.profile__edit-button');
 const popupProfile = document.querySelector('.popup_open-profile');
 const popupBtnClose = document.querySelector('.popup__button_type_close');
-const popupForm = document.querySelector('.popup__form');
 const popupNameInput = document.querySelector('.popup__input_type_name');
 const popupAboutInput = document.querySelector('.popup__input_type_about');
 const btnAddNewCard = document.querySelector('.profile__add-button');
@@ -10,13 +9,13 @@ const popupAddCardClose = popupAddCard.querySelector('.popup__button_type_close'
 const popupAddCardName = popupAddCard.querySelector('.popup__input_type_title');
 const popupAddCardLink = popupAddCard.querySelector('.popup__input_type_link');
 const addCard = popupAddCard.querySelector('.popup__form');
-const deleteButton = document.querySelector('.element__delete');
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__about');
 const elements = document.querySelector('.elements');
-const popupView = document.querySelector('.popup__view');
-const popuViewImage = document.querySelector('.popup__image');
-const popupViewDescription = document.querySelector('.popup__description');
+const popupView = document.querySelector('.popup__views');
+const popuViewImage = popupView.querySelector('.popup__image');
+const popupViewDescription = popupView.querySelector('.popup__description');
+const popupViewClose = popupView.querySelector('.popup__button_type_close');
 
 const initialCards = [{
         name: 'Архыз',
@@ -44,7 +43,7 @@ const initialCards = [{
     }
 ];
 
-/*открытие popup*/
+/*1.1 открытие popup*/
 function popupOpened(popup) {
     popup.classList.add('popup_opened');
 }
@@ -56,13 +55,14 @@ profileEditBtn.addEventListener('click', function() {
 btnAddNewCard.addEventListener('click', () => popupOpened(popupAddCard));
 
 
-/*закрытие popup*/
+/*1.2 закрытие popup*/
 function popupClose(popup) {
     popup.classList.remove('popup_opened');
 }
 
 popupBtnClose.addEventListener('click', () => popupClose(popupProfile));
 popupAddCardClose.addEventListener('click', () => popupClose(popupAddCard));
+popupViewClose.addEventListener('click', () => popupClose(popupView));
 
 /*создаем шаблон карточки*/
 function createCard(cardName, cardImage) {
@@ -100,8 +100,6 @@ function addInitialCards(initialCards) {
         elements.append(createCard(item.name, item.link));
     })
 }
-
-// addInitialCards(initialCards);
 
 /*добавление карточки*/
 function NewCardSubmit(evt) {
