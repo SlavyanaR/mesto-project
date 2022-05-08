@@ -19,29 +19,29 @@ const popupViewDescription = popupView.querySelector('.popup__description');
 const popupViewClose = popupView.querySelector('.popup__button_type_close');
 
 const initialCards = [{
-        name: 'Архыз',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-        name: 'Челябинская область',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-        name: 'Иваново',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-        name: 'Камчатка',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-        name: 'Холмогорский район',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-        name: 'Байкал',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+},
+{
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+},
+{
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+},
+{
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+},
+{
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+},
+{
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+}
 ];
 
 /*1.1 открытие popup*/
@@ -50,7 +50,7 @@ function openPopup(popup) {
 }
 
 /*Изменение профиля*/
-profileEditBtn.addEventListener('click', function() {
+profileEditBtn.addEventListener('click', function () {
     popupNameInput.value = popupNameInput.textContent;
     popupAboutInput.value = popupAboutInput.textContent;
     openPopup(popupProfile);
@@ -61,11 +61,31 @@ btnAddNewCard.addEventListener('click', () => openPopup(popupAddCard));
 /*1.2 закрытие popup*/
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
-}
+};
 
 popupBtnClose.addEventListener('click', () => closePopup(popupProfile));
 popupAddCardClose.addEventListener('click', () => closePopup(popupAddCard));
 popupViewClose.addEventListener('click', () => closePopup(popupView));
+
+
+/* Удаление popup по Escape */
+document.addEventListener('keydown', function (event){
+    if (event.key === 'Escape') {
+        closePopup(popupProfile);
+    };
+});
+
+document.addEventListener('keydown', function (event){
+    if (event.key === 'Escape') {
+        closePopup(popupAddCard);
+    };
+});
+
+document.addEventListener('keydown', function (event){
+    if (event.key === 'Escape') {
+        closePopup(popupView);
+    };
+});
 
 /*создаем шаблон карточки*/
 function createCard(cardName, cardImage) {
@@ -78,17 +98,24 @@ function createCard(cardName, cardImage) {
     cardElement.querySelector('.element__title').textContent = cardName;
 
     /*5. лайк карточки*/
-    cardElement.querySelector('.element__button').addEventListener('click', function(event) {
+
+    /*cardElement.querySelector('.element__button').addEventListener('click', function(event) {
         event.target.classList.toggle('element__button_active');
+    })*/
+    
+    cardElement.addEventListener('click', function (event) {
+        if (event.target.classList.contains('element__button')) {
+            event.target.classList.toggle('element__button_active');
+        }
     })
 
     /*6. удаление карточки*/
-    cardElement.querySelector('.element__delete').addEventListener('click', function(event) {
+    cardElement.querySelector('.element__delete').addEventListener('click', function (event) {
         event.target.closest('.element').remove();
     })
 
     /*7. открытие попапа с картинкой*/
-    cardElement.querySelector('.element__image').addEventListener('click', function() {
+    cardElement.querySelector('.element__image').addEventListener('click', function () {
         popuViewImage.src = cardImage;
         popuViewImage.alt = cardName;
         popupViewDescription.textContent = cardName;
