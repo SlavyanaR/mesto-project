@@ -17,6 +17,7 @@ const popupView = document.querySelector('.popup__views');
 const popuViewImage = popupView.querySelector('.popup__image');
 const popupViewDescription = popupView.querySelector('.popup__description');
 const popupViewClose = popupView.querySelector('.popup__button_type_close');
+const addButton = document.querySelector('.input__btn_action_add');
 
 const initialCards = [{
     name: 'Архыз',
@@ -148,16 +149,27 @@ function newCardSubmit(evt) {
     addCard.reset();
 }
 
+function setSubmitButtonState (isFormValid){
+    if (isFormValid) {
+    addButton.removeAttribute('disabled');
+    addButton.classList.remove('popup__button_type_disabled');
+  } else {
+   addButton.setAttribute('disabled', true);
+  addButton.classList.add('popup__button_type_disabled'); 
+  } 
+}
+
 /*Коммит профиля*/
 function profileEditSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = popupNameInput.value;
     profileAbout.textContent = popupAboutInput.value;
-
+    setSubmitButtonState(false);
     closePopup(popupProfile);
-
     addProfile.reset();
+    
 }
+
 
 popupProfile.addEventListener('submit', profileEditSubmit);
 addCard.addEventListener('submit', newCardSubmit);
