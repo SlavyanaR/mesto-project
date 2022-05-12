@@ -69,19 +69,27 @@ popupViewClose.addEventListener('click', () => closePopup(popupView));
 
 
 /* Удаление popup по Escape */
-document.addEventListener('keydown', function (event){
+document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         closePopup(popupProfile);
     };
 });
 
-document.addEventListener('keydown', function (event){
+/* Удаление popup кликом на оверлей - пока не работает *
+document.addEventListener('click',function (event) {
+        if (event.target.classList.contains('.popup__container') && event.target.classList.contains('.popup__button_type_close')) {
+        popup.classList.remove('popup_opened');
+    };
+});*/
+
+
+document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         closePopup(popupAddCard);
     };
 });
 
-document.addEventListener('keydown', function (event){
+document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         closePopup(popupView);
     };
@@ -102,7 +110,7 @@ function createCard(cardName, cardImage) {
     /*cardElement.querySelector('.element__button').addEventListener('click', function(event) {
         event.target.classList.toggle('element__button_active');
     })*/
-    
+
     cardElement.addEventListener('click', function (event) {
         if (event.target.classList.contains('element__button')) {
             event.target.classList.toggle('element__button_active');
