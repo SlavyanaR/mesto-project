@@ -3,7 +3,7 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
-    outline-color: #e108e8;
+    /*outline-color: #e108e8;*/
     margin-bottom: 27px;
     height: 27px;
     border-bottom: 1px solid rgb(0,0,0, 0.2);
@@ -17,3 +17,11 @@
         max-width: 238px;
     }
 }
+
+.popup__input:invalid {
+    border: 1px solid red; /* красная рамка для некорректных данных */
+  } 
+  
+  .popup__input:valid {
+    border: 1px solid green; /* зелёная - для корректных */
+  } 
