@@ -80,39 +80,6 @@ document.addEventListener('keydown', function (event) {
     };
 });
 
-/* Удаление popup кликом на оверлей - пока не работает */
-// document.addEventListener('click', function (event) {
-//         if ( event.target.classList.contains('.popup.popup__button_type_close') 
-//         //&& !event.target.className =='popup__container'
-//         ) {
-//             closePopup(popupProfile);
-//     };
-// });
-///////
-
-document.addEventListener(
-     'click',
-     function(event) {
-       
-       if (
-        event.target.matches('.profile__edit-button') 
-      ) {
-        openPopup(popupProfile);
-      }
-       else if (
-         event.target.matches('.popup__button_type_close') ||
-         !event.target.closest('.popup__container')  
-       ) {
-         closePopup(popupProfile);
-       }
-       else {
-        false;
-      };
-     }
-     
-   )
-  
-///////
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         closePopup(popupAddCard);
@@ -124,6 +91,34 @@ document.addEventListener('keydown', function (event) {
         closePopup(popupView);
     };
 });
+
+/* Удаление popup кликом на оверлей*/
+document.addEventListener(
+    'click',
+    function (event) {
+
+        if (
+            event.target.matches('.profile__edit-button') ||
+            event.target.matches('.profile__add-button')
+            //event.target.matches('.element__image')
+        ) {
+            openPopup(popupProfile);
+            //openPopup(popupAddCard);
+            //openPopup(popupView);
+        }
+        else if (
+            event.target.matches('.popup__button_type_close') ||
+            !event.target.closest('.popup__container')
+        ) {
+            closePopup(popupProfile);
+            //closePopup(popupAddCard);
+            //closePopup(popupView);
+        }
+        else {
+            false;
+        };
+    }
+)
 
 /*создаем шаблон карточки*/
 function createCard(cardName, cardImage) {
@@ -170,7 +165,7 @@ function addInitialCards(initialCards) {
     })
 }
 
-/*добавление проверки на валидность - пока не работает ((*/
+/*добавление проверки на валидность*/
 function setSubmitButtonState(isFormValid) {
     if (isFormValid) {
         addButton1.removeAttribute('disabled');
@@ -181,16 +176,16 @@ function setSubmitButtonState(isFormValid) {
     }
 }
 
-popupProfile.addEventListener('input', function (evt){
-    const isValid = popupNameInput.value.length > 0 && popupAboutInput.value.length > 0 ;
+popupProfile.addEventListener('input', function (evt) {
+    const isValid = popupNameInput.value.length > 0 && popupAboutInput.value.length > 0;
     setSubmitButtonState(isValid);
-  });
+});
 
 /*добавление карточки*/
 function newCardSubmit(evt) {
     evt.preventDefault();
     elements.prepend(createCard(popupAddCardName.value, popupAddCardLink.value));
-    setSubmitButtonState(false); /*добавление проверки на валидность - пока не работает ((*/ 
+    setSubmitButtonState(false); /*добавление проверки на валидность*/
     closePopup(popupAddCard);
     addCard.reset();
 }
@@ -202,7 +197,7 @@ function profileEditSubmit(evt) {
     profileName.textContent = popupNameInput.value;
     profileAbout.textContent = popupAboutInput.value;
     addProfile.reset();
-    setSubmitButtonState(false); /*добавление проверки на валидность - пока не работает ((*/ 
+    setSubmitButtonState(false); /*добавление проверки на валидность*/
 }
 
 popupProfile.addEventListener('submit', profileEditSubmit);
