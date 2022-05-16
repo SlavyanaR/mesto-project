@@ -68,7 +68,7 @@ function closePopup(popup) {
     popup.classList.remove('popup_opened');
 };
 
-popupBtnClose.addEventListener('click', () => closePopup(popupProfile));
+//popupBtnClose.addEventListener('click', () => closePopup(popupProfile));
 popupAddCardClose.addEventListener('click', () => closePopup(popupAddCard));
 popupViewClose.addEventListener('click', () => closePopup(popupView));
 
@@ -80,14 +80,39 @@ document.addEventListener('keydown', function (event) {
     };
 });
 
-/* Удаление popup кликом на оверлей - пока не работает *
-document.addEventListener('click',function (event) {
-        if (event.target.classList.contains('.popup__container') && event.target.classList.contains('.popup__button_type_close')) {
-        popup.classList.remove('popup_opened');
-    };
-});*/
+/* Удаление popup кликом на оверлей - пока не работает */
+// document.addEventListener('click', function (event) {
+//         if ( event.target.classList.contains('.popup.popup__button_type_close') 
+//         //&& !event.target.className =='popup__container'
+//         ) {
+//             closePopup(popupProfile);
+//     };
+// });
+///////
 
-
+document.addEventListener(
+     'click',
+     function(event) {
+       
+       if (
+        event.target.matches('.profile__edit-button') 
+      ) {
+        openPopup(popupProfile);
+      }
+       else if (
+         event.target.matches('.popup__button_type_close') ||
+         !event.target.closest('.popup__container')  
+       ) {
+         closePopup(popupProfile);
+       }
+       else {
+        false;
+      };
+     }
+     
+   )
+  
+///////
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         closePopup(popupAddCard);
@@ -157,7 +182,7 @@ function setSubmitButtonState(isFormValid) {
 }
 
 popupProfile.addEventListener('input', function (evt){
-    const isValid = popupNameInput.value.length > 0 && popupAboutInput.value > 0 ;
+    const isValid = popupNameInput.value.length > 0 && popupAboutInput.value.length > 0 ;
     setSubmitButtonState(isValid);
   });
 
