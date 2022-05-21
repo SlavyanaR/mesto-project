@@ -39,10 +39,21 @@
             <form class="popup__form" name="popupForm" novalidate>
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <input name="userName" type="text" class="popup__input popup__input_type_name" id="userName-input"
+<<<<<<< Updated upstream
                     placeholder="Жак-Ив Кусто" pattern="[A-Za-zА-Яа-яЁё]" required>
                 <input name="userAbout" type="text" class="popup__input popup__input_type_about" id="userAbout-input"
                     placeholder="Исследователь океана" pattern="[A-Za-zА-Яа-яЁё]" required>
                 <button type="submit" class="popup__button popup__button_type_submit popup__button_type_disabled popup__btn_action_add" disabled>Сохранить</button>
+=======
+                    required minlength="2" maxlength="40">
+                <span class="" placeholder="Жак-Ив Кусто"></span>
+                <span class="popup__form_input-error"></span>
+                <input name="userAbout" type="text" class="popup__input popup__input_type_about" id="userAbout-input"
+                    placeholder="Исследователь океана" required minlength="2" maxlength="200">
+                <button type="submit"
+                    class="popup__button popup__button_type_submit popup__button_type_disabled popup__btn_action_add"
+                    disabled>Сохранить</button>
+>>>>>>> Stashed changes
             </form>
         </div>
     </div>
@@ -54,8 +65,16 @@
                 <input name="name" type="text" class="popup__input popup__input_type_title" id="placeName-input"
                     placeholder="Название" pattern="[A-Za-zА-Яа-яЁё]" required>
                 <input name="link_image" type="url" class="popup__input popup__input_type_link" id="placeLink-input"
+<<<<<<< Updated upstream
                     placeholder="Ссылка" pattern="[A-Za-zА-Яа-яЁё]" required>
                 <button type="submit" class="popup__button popup__button_type_submit popup__button_type_disabled popup__btn_action_add" disabled>Создать</button>
+=======
+                    placeholder="Ссылка на картинку" required>
+                <span class="popup__input-error_active popup__input-error "></span>
+                <button type="submit"
+                    class="popup__button popup__button_type_submit popup__button_type_disabled popup__btn_action_add "
+                    disabled>Создать</button>
+>>>>>>> Stashed changes
             </form>
         </div>
     </div>

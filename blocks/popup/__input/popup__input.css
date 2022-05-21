@@ -16,4 +16,16 @@
         padding: 0;
         max-width: 238px;
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+
+/*.popup__input:invalid {
+    border-bottom-color: #FF0000; /* красная рамка для некорректных данных 
+  } */
+  
+ /* .popup__input:valid {
+    border-bottom-color: green; /* зелёная - для корректных 
+  } */
+>>>>>>> Stashed changes
