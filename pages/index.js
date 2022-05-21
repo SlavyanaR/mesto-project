@@ -22,6 +22,12 @@ const popuViewImage = popupView.querySelector('.popup__image');
 const popupViewDescription = popupView.querySelector('.popup__description');
 const popupViewClose = popupView.querySelector('.popup__button_type_close');
 
+function func1 () {
+    popuViewImage.src = cardImage;
+    popuViewImage.alt = cardName;
+    popupViewDescription.textContent = cardName;
+    openPopup(popupView);
+}
 
 const initialCards = [{
     name: 'Архыз',
@@ -70,7 +76,7 @@ function closePopup(popup) {
 
 //popupBtnClose.addEventListener('click', () => closePopup(popupProfile));
 popupAddCardClose.addEventListener('click', () => closePopup(popupAddCard));
-popupViewClose.addEventListener('click', () => closePopup(popupView));
+//popupViewClose.addEventListener('click', () => closePopup(popupView));
 
 
 /* Удаление popup по Escape */
@@ -98,8 +104,7 @@ document.addEventListener(
     function (event) {
 
         if (
-            event.target.matches('.profile__edit-button') ||
-            event.target.matches('.profile__add-button')
+            event.target.matches('.profile__edit-button') 
             //event.target.matches('.element__image')
         ) {
             openPopup(popupProfile);
@@ -107,12 +112,22 @@ document.addEventListener(
             //openPopup(popupView);
         }
         else if (
+            event.target.matches('.popup_open-card')
+        ) {
+            openPopup(popuViewImage);
+
+        } 
+        else if (
             event.target.matches('.popup__button_type_close') ||
-            !event.target.closest('.popup__container')
+            !event.target.closest('.popup__container') 
         ) {
             closePopup(popupProfile);
-            //closePopup(popupAddCard);
-            //closePopup(popupView);
+        }
+        else if (
+            event.target.matches('.popup__button_type_close') ||
+            !event.target.closest('.popup__view')
+        ) {
+            closePopup(popupView);
         }
         else {
             false;
@@ -148,12 +163,7 @@ function createCard(cardName, cardImage) {
     })
 
     /*7. открытие попапа с картинкой*/
-    cardElement.querySelector('.element__image').addEventListener('click', function () {
-        popuViewImage.src = cardImage;
-        popuViewImage.alt = cardName;
-        popupViewDescription.textContent = cardName;
-        openPopup(popupView);
-    })
+    cardElement.querySelector('.element__image').addEventListener('click',func1 )
 
     return cardElement;
 }
