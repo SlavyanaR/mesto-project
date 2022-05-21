@@ -1,26 +1,32 @@
+import'../pages/index.css';
+import { addInitialCards, initialCards } from "../src/components/card.js";
+
+
+
+
 const profileEditBtn = document.querySelector('.profile__edit-button');
-const popupProfile = document.querySelector('.popup_open-profile');
+//const popupProfile = document.querySelector('.popup_open-profile');
 const popupBtnClose = document.querySelector('.popup__button_type_close');
 const addButton1 = document.querySelector('.popup__btn_action_add');/*добавлен класс для кнопки submit*/
-const popupNameInput = document.querySelector('.popup__input_type_name');
-const popupAboutInput = document.querySelector('.popup__input_type_about');
+//const popupNameInput = document.querySelector('.popup__input_type_name');
+//const popupAboutInput = document.querySelector('.popup__input_type_about');
 const addProfile = document.querySelector('.popup__form');
 const btnAddNewCard = document.querySelector('.profile__add-button');
-const popupAddCard = document.querySelector('.popup_open-card');
-const popupAddCardClose = popupAddCard.querySelector('.popup__button_type_close');
-const popupAddCardName = popupAddCard.querySelector('.popup__input_type_title');
-const popupAddCardLink = popupAddCard.querySelector('.popup__input_type_link');
+//const popupAddCard = document.querySelector('.popup_open-card');
+//const popupAddCardClose = popupAddCard.querySelector('.popup__button_type_close');
+//const popupAddCardName = popupAddCard.querySelector('.popup__input_type_title');
+//const popupAddCardLink = popupAddCard.querySelector('.popup__input_type_link');
 const addCard = popupAddCard.querySelector('.popup__form');
 const addButton2 = popupAddCard.querySelector('.popup__btn_action_add');/*добавлен класс для кнопки submit*/
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__about');
 const elements = document.querySelector('.elements');
-const popupView = document.querySelector('.popup__views');
-const popuViewImage = popupView.querySelector('.popup__image');
-const popupViewDescription = popupView.querySelector('.popup__description');
-const popupViewClose = popupView.querySelector('.popup__button_type_close');
+//const popupView = document.querySelector('.popup__views');
+//const popuViewImage = popupView.querySelector('.popup__image');
+//const popupViewDescription = popupView.querySelector('.popup__description');
+//const popupViewClose = popupView.querySelector('.popup__button_type_close');
 
-const initialCards = [{
+/*const initialCards = [{
     name: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
 },
@@ -44,12 +50,12 @@ const initialCards = [{
     name: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
 }
-];
+];*/
 
-/*1.1 открытие popup*/
+/*1.1 открытие popup*
 function openPopup(popup) {
     popup.classList.add('popup_opened');
-}
+}*/
 
 /*Изменение профиля*/
 profileEditBtn.addEventListener('click', function () {
@@ -60,17 +66,17 @@ profileEditBtn.addEventListener('click', function () {
 btnAddNewCard.addEventListener('click', () => openPopup(popupAddCard));
 
 
-/*1.2 закрытие popup*/
+/*1.2 закрытие popup*
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
-};
+};*/
 
-popupBtnClose.addEventListener('click', () => closePopup(popupProfile));
-popupAddCardClose.addEventListener('click', () => closePopup(popupAddCard));
-popupViewClose.addEventListener('click', () => closePopup(popupView));
+//popupBtnClose.addEventListener('click', () => closePopup(popupProfile));
+//popupAddCardClose.addEventListener('click', () => closePopup(popupAddCard));
+//popupViewClose.addEventListener('click', () => closePopup(popupView));
 
 
-/* Удаление popup по Escape */
+/* Удаление popup по Escape 
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         closePopup(popupProfile);
@@ -87,7 +93,7 @@ document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         closePopup(popupView);
     };
-});
+});*/
 
 /* Удаление popup кликом на оверлей - пока не работает *
 document.addEventListener('click',function (event) {
@@ -97,7 +103,7 @@ document.addEventListener('click',function (event) {
 });*/
 
 
-/*создаем шаблон карточки*/
+/*создаем шаблон карточки*
 function createCard(cardName, cardImage) {
     const cardTemplate = document.querySelector('#card-template').content;
     const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
@@ -111,7 +117,7 @@ function createCard(cardName, cardImage) {
 
     /*cardElement.querySelector('.element__button').addEventListener('click', function(event) {
         event.target.classList.toggle('element__button_active');
-    })*/
+    })*
 
     cardElement.addEventListener('click', function (event) {
         if (event.target.classList.contains('element__button')) {
@@ -119,12 +125,12 @@ function createCard(cardName, cardImage) {
         }
     })
 
-    /*6. удаление карточки*/
+    6. удаление карточки
     cardElement.querySelector('.element__delete').addEventListener('click', function (event) {
         event.target.closest('.element').remove();
     })
 
-    /*7. открытие попапа с картинкой*/
+    7. открытие попапа с картинкой
     cardElement.querySelector('.element__image').addEventListener('click', function () {
         popuViewImage.src = cardImage;
         popuViewImage.alt = cardName;
@@ -133,7 +139,7 @@ function createCard(cardName, cardImage) {
     })
 
     return cardElement;
-}
+}*/
 
 /*создаем 6 карточек*/
 function addInitialCards(initialCards) {
