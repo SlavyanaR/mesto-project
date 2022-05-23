@@ -61,5 +61,5 @@ export {
   popuViewImage,
   popupViewDescription,
   popupAddCard,
-  popupProfile,
+  popupProfile
 }

@@ -6,7 +6,7 @@ const profile = document.querySelector('.profile');
 const profileAvatar = document.querySelector('.profile__avatar');
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__about');
-const popupForm = document.querySelector('.popup__form');
+const addCardForm = popupProfile.querySelector('.popup__form');
 const profileAddButton = document.querySelector('.profile__add-button');
 
 const formEditProfile = document.forms.edit;
@@ -14,7 +14,7 @@ const formAvatar = document.forms.avatar;
 const formAddCard = document.forms.add;
 
 enableValidation({
-    formSelector: '.form',
+    formSelector: '.popup__form',
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button_type_submit',
     inactiveButtonClass: 'form__submit_disabled',
@@ -28,9 +28,9 @@ export {
     profileAvatar,
     profileName,
     profileAbout,
-    popupForm,
+    addCardForm,
     profileAddButton,
     formEditProfile,
     formAvatar,
-    formAddCard,
+    formAddCard
 }

@@ -1,4 +1,6 @@
-import{
+import { formAddCard } from '../components/utils.js';
+
+import {
     openPopup,
     closePopup,
     popupView,
@@ -7,9 +9,10 @@ import{
     popupAddCard
 } from '../components/modal.js';
 
+import { profileId } from '../index.js';
 
 
-const elementList = document.querySelector('.elements');
+//const elementList = document.querySelector('.elements');
 const addCardForm = popupAddCard.querySelector('.popup__form');
 const buttonForm = addCardForm.querySelector('.popup__button_type_submit');
 const cardTemplate = document.querySelector('#card-template').content;
@@ -42,7 +45,6 @@ const initialCards = [{
 
 /*создаем шаблон карточки*/
 function createCard(cardName, cardImage) {
-    const cardTemplate = document.querySelector('#card-template').content;
     const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
     const cardElementImage = cardElement.querySelector('.element__image');
 
@@ -57,8 +59,8 @@ function createCard(cardName, cardImage) {
             event.target.classList.toggle('element__button_active');
         }
     })
-      /*удаление карточки*/
-      cardElement.querySelector('.element__delete').addEventListener('click', function (event) {
+    /*удаление карточки*/
+    cardElement.querySelector('.element__delete').addEventListener('click', function (event) {
         event.target.closest('.element').remove();
     })
 
@@ -90,6 +92,7 @@ function newCardSubmit(evt) {
     buttonForm.disabled = true;
 }
 
+
 addCardForm.addEventListener('submit', newCardSubmit);
 
-export { addInitialCards, initialCards }
+export { newCardSubmit, addInitialCards }
