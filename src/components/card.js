@@ -4,17 +4,10 @@ import{
     popupView,
     popuViewImage,
     popupViewDescription,
-    popupViewClose,
-    popupAddCard,
-    popupAddCardClose,
-    popupAddCardName,
-    popupAddCardLink,
-    popupProfile,
-    popupNameInput,
-    popupAboutInput,
-    popupBtnClose,
-    popups
+    popupAddCard
 } from '../components/modal.js';
+
+
 
 const elementList = document.querySelector('.elements');
 const addCardForm = popupAddCard.querySelector('.popup__form');

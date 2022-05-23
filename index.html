@@ -25,39 +25,55 @@
             </div>
             <button type="button" class="profile__add-button"></button>
         </section>
+
         <section class="container-elements">
             <ul class="elements">
             </ul>
         </section>
+
     </main>
+
     <footer class="footer">
         <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
+
     <div class="popup popup_open-profile">
         <div class="popup__container">
             <button type="button" class="popup__button popup__button_type_close"></button>
+
             <form class="popup__form" name="popupForm" novalidate>
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <input name="userName" type="text" class="popup__input popup__input_type_name" id="userName-input"
-                      required minlength="2" maxlength="40">
-                    <span class="" placeholder="Жак-Ив Кусто"></span>
-                    <span class="popup__form_input-error"></span>
+                    required minlength="2" maxlength="40">
+                <span class="popup__input-error profile-name-error"></span>
+
                 <input name="userAbout" type="text" class="popup__input popup__input_type_about" id="userAbout-input"
-                    placeholder="Исследователь океана"  required minlength="2" maxlength="200">
-                <button type="submit" class="popup__button popup__button_type_submit popup__button_type_disabled popup__btn_action_add" disabled>Сохранить</button>
+                    placeholder="Исследователь океана" required minlength="2" maxlength="200">
+                <span class="popup__input-error profile-about-error"></span>
+
+                <button type="submit"
+                    class="popup__button popup__button_type_submit popup__button_type_disabled popup__btn_action_add"
+                    disabled>Сохранить</button>
             </form>
         </div>
     </div>
     <div class="popup popup_open-card">
         <div class="popup__container">
             <button type="button" class="popup__button popup__button_type_close"></button>
+
             <form class="popup__form" name="popupForm" novalidate>
                 <h2 class="popup__title">Новое место</h2>
                 <input name="name" type="text" class="popup__input popup__input_type_title" id="placeName-input"
                     placeholder="Название" required minlength="2" maxlength="30">
+                <span class="popup__input-error card-name-error"></span>
+
                 <input name="link_image" type="url" class="popup__input popup__input_type_link" id="placeLink-input"
-                    placeholder="Ссылка"  required>
-                <button type="submit" class="popup__button popup__button_type_submit popup__button_type_disabled popup__btn_action_add " disabled>Создать</button>
+                    placeholder="Ссылка" required>
+                <span class="popup__input-error card-url-error"></span>
+
+                <button type="submit"
+                    class="popup__button popup__button_type_submit popup__button_type_disabled popup__btn_action_add "
+                    disabled>Создать</button>
             </form>
         </div>
     </div>
@@ -69,6 +85,7 @@
             <h3 class="popup__description"></h3>
         </div>
     </div>
+
     <template id="card-template">
         <li class="element">
             <img src="" alt="" class="element__image">
@@ -79,6 +96,7 @@
             <button type="button" class="element__delete"></button>
         </li>
     </template>
+    
     <script src='./pages/index.js'></script>
 </body>
 
