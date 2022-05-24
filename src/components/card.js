@@ -9,7 +9,6 @@ import {
     popupAddCard
 } from '../components/modal.js';
 
-import { profileId } from '../index.js';
 
 
 //const elementList = document.querySelector('.elements');
@@ -85,14 +84,24 @@ function addInitialCards(initialCards) {
 /*добавление карточки*/
 function newCardSubmit(evt) {
     evt.preventDefault();
-    elements.prepend(createCard(popupAddCardName.value, popupAddCardLink.value));
-    closePopup(popupAddCard);
-    addCard.reset();
-    buttonForm.classList.add('form__submit_disabled');
-    buttonForm.disabled = true;
-}
-
-
-addCardForm.addEventListener('submit', newCardSubmit);
+    formAddCard.elements.submit.textContent = 'Сохранение...';
+    addCard(formAddCard.elements.name.value, formAddCard.elements.image.value)
+      .then((card) => {
+        console.log(card);
+        elementList.prepend(createCard(formAddCard.elements.image.value, formAddCard.elements.name.value, card._id, card.owner._id, card.likes));
+        closePopup(popupAddCard);
+        formAddCard.reset();
+        formAddCard.elements.submit.classList.add('form__submit_disabled');
+        formAddCard.elements.submit.disabled = true;
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        formAddCard.elements.submit.textContent = 'Создать';
+      })
+  
+  }
+  
 
 export { newCardSubmit, addInitialCards }

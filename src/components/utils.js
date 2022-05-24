@@ -4,9 +4,9 @@ import { popupProfile } from '../components/modal.js';
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profile = document.querySelector('.profile');
 const profileAvatar = document.querySelector('.profile__avatar');
-const profileName = document.querySelector('.profile__name');
-const profileAbout = document.querySelector('.profile__about');
-const addCardForm = popupProfile.querySelector('.popup__form');
+const profileName = document.querySelector('.profile__name'); /*+*/
+const profileAbout = document.querySelector('.profile__about'); /*+*/
+const addProfile  = popupProfile.querySelector('.popup__form');
 const profileAddButton = document.querySelector('.profile__add-button');
 
 const formEditProfile = document.forms.edit;
@@ -17,9 +17,9 @@ enableValidation({
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button_type_submit',
-    inactiveButtonClass: 'form__submit_disabled',
-    inputErrorClass: 'form__input_type_error',
-    errorClass: 'form__input-error_active'
+    inactiveButtonClass: 'popup__button_type_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__input-error_active'
 });
 
 export {
@@ -28,7 +28,7 @@ export {
     profileAvatar,
     profileName,
     profileAbout,
-    addCardForm,
+    addProfile,
     profileAddButton,
     formEditProfile,
     formAvatar,
