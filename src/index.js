@@ -1,14 +1,14 @@
 /*import { newCardSubmit, addInitialCards } from "../src/components/card.js";*/
 
 import {
-    openPopup,
-    closePopup,
     popupView,
     popuViewImage,
     popupViewDescription,
     popupAddCard,
     popupProfile
-} from './components/modal';
+  //  openPopup,
+    //closePopup,
+} from './components/modal.js';
 
 /*import {
   profileEditButton,
@@ -69,10 +69,10 @@ const initialCards = [{
 }
 ];
 
-/*1.1 открытие popup*
+//1.1 открытие popup
 function openPopup(popup) {
     popup.classList.add('popup_opened');
-}*/
+}
 
 /*Изменение профиля*/
 profileEditBtn.addEventListener('click', function () {
@@ -83,10 +83,10 @@ profileEditBtn.addEventListener('click', function () {
 btnAddNewCard.addEventListener('click', () => openPopup(popupAddCard));
 
 
-/*1.2 закрытие popup
+//1.2 закрытие popup
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
-};*/
+};
 
 popupBtnClose.addEventListener('click', () => closePopup(popupProfile));
 popupAddCardClose.addEventListener('click', () => closePopup(popupAddCard));

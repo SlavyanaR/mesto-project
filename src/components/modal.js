@@ -1,16 +1,18 @@
 const popupView = document.querySelector('.popup__views'); 
 const popuViewImage = popupView.querySelector('.popup__image'); 
 const popupViewDescription = popupView.querySelector('.popup__description');
+const popupAddCard = document.querySelector('.popup_open-card');
+const popupProfile = document.querySelector('.popup_open-profile');
 
 //const popupViewClose = popupView.querySelector('.popup__button_type_close');
 
-const popupAddCard = document.querySelector('.popup_open-card');
+
 
 //const popupAddCardClose = popupAddCard.querySelector('.popup__button_type_close');
 //const popupAddCardName = popupAddCard.querySelector('.popup__input_type_title');
 //const popupAddCardLink = popupAddCard.querySelector('.popup__input_type_link');
 
-const popupProfile = document.querySelector('.popup_open-profile');
+
 
 //const popupNameInput = popupProfile.querySelector('.popup__input_type_name');
 //const popupAboutInput = popupProfile.querySelector('.popup__input_type_about');
