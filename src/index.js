@@ -1,4 +1,4 @@
-
+/*import { createCard } from "../src/components/card.js";*/
 
 import {
     openPopup,
@@ -20,7 +20,7 @@ import {
     btnAddNewCard,
     formEditProfile,
     formAvatar,
-   formAddCard
+    formAddCard
 } from './components/utils.js';
 
 const popupBtnClose = document.querySelector('.popup__button_type_close');
@@ -83,10 +83,7 @@ function createCard(cardName, cardImage) {
 
     /*5. лайк карточки*/
 
-    /*cardElement.querySelector('.element__button').addEventListener('click', function(event) {
-        event.target.classList.toggle('element__button_active');
-    })*/
-
+    
     cardElement.addEventListener('click', function (event) {
         if (event.target.classList.contains('element__button')) {
             event.target.classList.toggle('element__button_active');
@@ -123,7 +120,7 @@ function newCardSubmit(evt) {
     elements.prepend(createCard(popupAddCardName.value, popupAddCardLink.value));
     closePopup(popupAddCard);
     addCard.reset();
-    setSubmitButtonState(false); /*добавление проверки на валидность*/
+
 }
 
 /*Коммит профиля*/
@@ -135,7 +132,6 @@ function profileEditSubmit(evt) {
     closePopup(popupProfile);
 
     addProfile.reset();
-    setSubmitButtonState(false); /*добавление проверки на валидность*/
 }
 
 popupProfile.addEventListener('submit', profileEditSubmit);

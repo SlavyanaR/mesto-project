@@ -78,14 +78,14 @@ function createCard(cardName, cardImage) {
     return cardElement;
 }
 
-/*создаем 6 карточек*/
+/*создаем 6 карточек*
 function addInitialCards(initialCards) {
     initialCards.forEach((item) => {
         elements.append(createCard(item.name, item.link));
     })
 }
 
-/*добавление карточки*/
+/*добавление карточки*
 function newCardSubmit(evt) {
     evt.preventDefault();
     elements.prepend(createCard(popupAddCardName.value, popupAddCardLink.value));
@@ -93,14 +93,14 @@ function newCardSubmit(evt) {
     addCard.reset();
     }
 
-/*Коммит профиля*/
+/*Коммит профиля*
 function profileEditSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = popupNameInput.value;
     profileAbout.textContent = popupAboutInput.value;
     closePopup(popupProfile);
     addProfile.reset();
-}
+}*/
 
 
-export { newCardSubmit, addInitialCards, profileEditSubmit }
+export { createCard }
