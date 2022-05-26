@@ -10,15 +10,15 @@ import {
 
 import {
     profileEditBtn,
-   //profile,
-   // profileAvatar,
+    profile,
+    profileAvatar,
     profileName,
     profileAbout,
-    //addProfile,
+    addProfile,
     btnAddNewCard,
-    popupEditProfile,
-    //popupAvatar,
-    popupAddCard,
+    formEditProfile,
+    formAvatar,
+    formAddCard
 } from './components/utils.js';
 
 //const popupBtnClose = document.querySelector('.popup__button_type_close');

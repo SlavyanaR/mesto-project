@@ -9,9 +9,9 @@ const profileAbout = document.querySelector('.profile__about');
 const addProfile  = popupProfile.querySelector('.popup__form');
 const btnAddNewCard = document.querySelector('.profile__add-button');
 
-const popupEditProfile = document.forms.edit;
-const popupAvatar = document.forms.avatar;
-const popupAddCard = document.forms.add;
+const formEditProfile  = document.forms.edit;
+const formAvatar  = document.forms.avatar;
+const formAddCard  = document.forms.add;
 
 enableValidation({
     formSelector: '.popup__form',
@@ -30,7 +30,7 @@ export {
     profileAbout,
     addProfile,
     btnAddNewCard,
-    popupEditProfile,
-    popupAvatar,
-    popupAddCard
+    formEditProfile,
+    formAvatar,
+    formAddCard
 }
