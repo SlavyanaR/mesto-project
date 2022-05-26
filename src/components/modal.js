@@ -10,7 +10,7 @@ function openPopup(popup) {
   document.addEventListener('keydown', closeByEscape);
 }
 
-/*1.2 закрытие popup*/
+/*.2 закрытие popup*/
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closeByEscape);
