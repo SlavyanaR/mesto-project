@@ -1,20 +1,23 @@
-import { formAddCard } from '../components/utils.js';
+import { popupAddCard } from '../components/utils.js';
 
 import {
-    openPopup,
-    closePopup,
     popupView,
     popuViewImage,
     popupViewDescription,
-    popupAddCard
+    popupAddCard,
+    openPopup,
+    closePopup,
 } from '../components/modal.js';
 
 
+const addCard  = popupAddCard.querySelector('.popup__form');
+const popupNameInput = document.querySelector('.popup__input_type_name');
+const popupAboutInput = document.querySelector('.popup__input_type_about');
+const popupAddCardName = popupAddCard.querySelector('.popup__input_type_title');
+const popupAddCardLink = popupAddCard.querySelector('.popup__input_type_link');
+const elements = document.querySelector('.elements');
+//const buttonForm = addCardForm.querySelector('.popup__button_type_submit');
 
-//const elementList = document.querySelector('.elements');
-const addCardForm = popupAddCard.querySelector('.popup__form');
-const buttonForm = addCardForm.querySelector('.popup__button_type_submit');
-const cardTemplate = document.querySelector('#card-template').content;
 
 const initialCards = [{
     name: 'Архыз',
@@ -44,6 +47,7 @@ const initialCards = [{
 
 /*создаем шаблон карточки*/
 function createCard(cardName, cardImage) {
+    const cardTemplate = document.querySelector('#card-template').content;
     const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
     const cardElementImage = cardElement.querySelector('.element__image');
 
@@ -84,24 +88,19 @@ function addInitialCards(initialCards) {
 /*добавление карточки*/
 function newCardSubmit(evt) {
     evt.preventDefault();
-    formAddCard.elements.submit.textContent = 'Сохранение...';
-    addCard(formAddCard.elements.name.value, formAddCard.elements.image.value)
-      .then((card) => {
-        console.log(card);
-        elementList.prepend(createCard(formAddCard.elements.image.value, formAddCard.elements.name.value, card._id, card.owner._id, card.likes));
-        closePopup(popupAddCard);
-        formAddCard.reset();
-        formAddCard.elements.submit.classList.add('form__submit_disabled');
-        formAddCard.elements.submit.disabled = true;
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        formAddCard.elements.submit.textContent = 'Создать';
-      })
-  
-  }
-  
+    elements.prepend(createCard(popupAddCardName.value, popupAddCardLink.value));
+    closePopup(popupAddCard);
+    addCard.reset();
+    }
 
-export { newCardSubmit, addInitialCards }
+/*Коммит профиля*/
+function profileEditSubmit(evt) {
+    evt.preventDefault();
+    profileName.textContent = popupNameInput.value;
+    profileAbout.textContent = popupAboutInput.value;
+    closePopup(popupProfile);
+    addProfile.reset();
+}
+
+
+export { newCardSubmit, addInitialCards, profileEditSubmit }
