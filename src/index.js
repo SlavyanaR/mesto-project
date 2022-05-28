@@ -1,4 +1,4 @@
-/*import { createCard } from "../src/components/card.js";*/
+import { createCard } from "../src/components/card.js";
 
 import {
     openPopup,
@@ -71,40 +71,6 @@ profileEditBtn.addEventListener('click', function () {
 btnAddNewCard.addEventListener('click', () => openPopup(popupAddCard));
 
 
-/*создаем шаблон карточки*/
-function createCard(cardName, cardImage) {
-    const cardTemplate = document.querySelector('#card-template').content;
-    const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
-    const cardElementImage = cardElement.querySelector('.element__image');
-
-    cardElementImage.src = cardImage;
-    cardElementImage.alt = cardName;
-    cardElement.querySelector('.element__title').textContent = cardName;
-
-    /*5. лайк карточки*/
-
-    
-    cardElement.addEventListener('click', function (event) {
-        if (event.target.classList.contains('element__button')) {
-            event.target.classList.toggle('element__button_active');
-        }
-    })
-
-    /*6. удаление карточки*/
-    cardElement.querySelector('.element__delete').addEventListener('click', function (event) {
-        event.target.closest('.element').remove();
-    })
-
-    /*7. открытие попапа с картинкой*/
-    cardElement.querySelector('.element__image').addEventListener('click', function () {
-        popuViewImage.src = cardImage;
-        popuViewImage.alt = cardName;
-        popupViewDescription.textContent = cardName;
-        openPopup(popupView);
-    })
-
-    return cardElement;
-}
 
 /*создаем 6 карточек*/
 function addInitialCards(initialCards) {
@@ -136,4 +102,6 @@ function profileEditSubmit(evt) {
 
 popupProfile.addEventListener('submit', profileEditSubmit);
 addCard.addEventListener('submit', newCardSubmit);
+
 addInitialCards(initialCards);
+debugger;
