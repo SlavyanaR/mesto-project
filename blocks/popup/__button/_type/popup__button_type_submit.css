@@ -5,9 +5,10 @@
   color: #fff;
   max-width: 358px;
   min-height: 50px;
-  margin: 21px 0px 48px 0px;
+  margin: 48px 0 0 0;
   border-radius: 2px;
   padding: 0;
+  width: 100%;
 }
 
 @media screen and (max-width: 500px) {

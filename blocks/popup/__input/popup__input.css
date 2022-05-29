@@ -1,13 +1,15 @@
 .popup__input {
+    width:100%;
     border: none;
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
-    /*outline-color: #e108e8;*/
-    margin-bottom: 27px;
+    outline: none;
+    color: #000;
+    padding: 0 0 8px 0;
+    margin: 30px 0 0 0;
     height: 27px;
     border-bottom: 1px solid rgb(0,0,0, 0.2);
-
 }
 
 @media screen and (max-width: 500px) {
@@ -16,12 +18,4 @@
         padding: 0;
         max-width: 238px;
     }
-}
-
-.popup__input:invalid {
-    border: 1px solid red; /* красная рамка для некорректных данных */
-  } 
-  
-  .popup__input:valid {
-    border: 1px solid green; /* зелёная - для корректных */
-  } 
+} 
