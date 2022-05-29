@@ -81,4 +81,3 @@ popupProfile.addEventListener('submit', profileEditSubmit);
 addCard.addEventListener('submit', newCardSubmit);
 
 addInitialCards(initialCards);
-debugger;
