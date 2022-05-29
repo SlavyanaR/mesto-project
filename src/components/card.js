@@ -10,7 +10,7 @@ import {
 } from '../components/modal.js';
 
 
-const addCard  = popupAddCard.querySelector('.popup__form');
+
 const popupNameInput = document.querySelector('.popup__input_type_name');
 const popupAboutInput = document.querySelector('.popup__input_type_about');
 const popupAddCardName = popupAddCard.querySelector('.popup__input_type_title');
@@ -56,18 +56,18 @@ function createCard(cardName, cardImage) {
 
     /*лайк карточки*/
 
-    cardElement.addEventListener('click', function (event) {
-        if (event.target.classList.contains('element__button')) {
-            event.target.classList.toggle('element__button_active');
-        }
+    cardElement.querySelector('.element__button').addEventListener('click', function(event) {
+        event.target.classList.toggle('element__button_active');
     })
+
+
     /*удаление карточки*/
     cardElement.querySelector('.element__delete').addEventListener('click', function (event) {
         event.target.closest('.element').remove();
     })
 
     /*открытие попапа с картинкой*/
-    cardElement.querySelector('.element__image').addEventListener('click', function () {
+    cardElementImage.addEventListener('click', function () {
         popuViewImage.src = cardImage;
         popuViewImage.alt = cardName;
         popupViewDescription.textContent = cardName;

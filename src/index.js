@@ -38,8 +38,6 @@ const elements = document.querySelector('.elements');
 const popupViewClose = popupView.querySelector('.popup__button_type_close');
 
 
-
-
 /*Изменение профиля*/
 profileEditBtn.addEventListener('click', function () {
     popupNameInput.value = popupNameInput.textContent;
@@ -59,7 +57,7 @@ function addInitialCards(initialCards) {
 
 
 /*добавление карточки*/
-function newCardSubmit(evt) {
+function submitNewCard(evt) {
     evt.preventDefault();
     elements.prepend(createCard(popupAddCardName.value, popupAddCardLink.value));
     closePopup(popupAddCard);
@@ -68,17 +66,15 @@ function newCardSubmit(evt) {
 }
 
 /*Коммит профиля*/
-function profileEditSubmit(evt) {
+function submitProfileEdit(evt) {
     evt.preventDefault();
     profileName.textContent = popupNameInput.value;
     profileAbout.textContent = popupAboutInput.value;
 
     closePopup(popupProfile);
-
-    addProfile.reset();
 }
 
-popupProfile.addEventListener('submit', profileEditSubmit);
-addCard.addEventListener('submit', newCardSubmit);
+popupProfile.addEventListener('submit', submitProfileEdit);
+addCard.addEventListener('submit', submitNewCard);
 
 addInitialCards(initialCards);
