@@ -1,4 +1,5 @@
-import { createCard } from "../src/components/card.js";
+import { createCard,
+    initialCards } from "../src/components/card.js";
 
 import {
     openPopup,
@@ -35,31 +36,7 @@ const addButton2 = popupAddCard.querySelector('.popup__btn_action_add');/*доб
 const elements = document.querySelector('.elements');
 const popupViewClose = popupView.querySelector('.popup__button_type_close');
 
-const initialCards = [{
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-},
-{
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-},
-{
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-},
-{
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-},
-{
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-},
-{
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-}
-];
+
 
 
 /*Изменение профиля*/

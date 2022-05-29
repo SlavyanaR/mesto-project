@@ -2,8 +2,8 @@ import { enableValidation } from '../components/validate.js';
 import { popupProfile } from '../components/modal.js';
 
 const profileEditBtn = document.querySelector('.profile__edit-button');
-const profile = document.querySelector('.profile');/*???*/
-const profileAvatar = document.querySelector('.profile__avatar');/*???*/
+const profile = document.querySelector('.profile');
+const profileAvatar = document.querySelector('.profile__avatar');
 const profileName = document.querySelector('.profile__name'); 
 const profileAbout = document.querySelector('.profile__about'); 
 const addProfile  = popupProfile.querySelector('.popup__form');

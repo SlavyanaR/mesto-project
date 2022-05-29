@@ -1,12 +1,12 @@
 const enableValidation = (settings) => {
-    const formList = Array.from(document.querySelectorAll(settings.formSelector));
+    const formList = Array.from(document.querySelectorAll(settings.formSelector)); /*получаем все формы в массив*/
 
 
     const setEventListeners = (formElement) => {
-        const inputList = Array.from(formElement.querySelectorAll(settings.inputSelector));
-        const buttonElement = formElement.querySelector(settings.submitButtonSelector);
+        const inputList = Array.from(formElement.querySelectorAll(settings.inputSelector)); /*находим все input формы*/
+        const buttonElement = formElement.querySelector(settings.submitButtonSelector);/*находим кнопку отправки */
 
-        toggleButtonState(inputList, buttonElement);
+        toggleButtonState(inputList, buttonElement); /*определение статуса кнопки*/
 
         inputList.forEach((inputElement) => {
             inputElement.addEventListener('input', function () {
