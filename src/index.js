@@ -26,22 +26,22 @@ import {
 } from './components/utils.js';
 
 const popupBtnClose = document.querySelector('.popup__button_type_close');
-const addButton1 = document.querySelector('.popup__btn_action_add');/*добавлен класс для кнопки submit*/
 const popupNameInput = document.querySelector('.popup__input_type_name');
 const popupAboutInput = document.querySelector('.popup__input_type_about');
 const popupAddCardClose = popupAddCard.querySelector('.popup__button_type_close');
 const popupAddCardName = popupAddCard.querySelector('.popup__input_type_title');
 const popupAddCardLink = popupAddCard.querySelector('.popup__input_type_link');
 const addCard = popupAddCard.querySelector('.popup__form');
-const addButton2 = popupAddCard.querySelector('.popup__btn_action_add');/*добавлен класс для кнопки submit*/
 const elements = document.querySelector('.elements');
 const popupViewClose = popupView.querySelector('.popup__button_type_close');
+const cardBtnSubmit = popupAddCard.querySelector('.popup__button_type_submit');
+const profileBtnSubmit = popupProfile.querySelector('.popup__button_type_submit')
 
 
 /*Изменение профиля*/
 profileEditBtn.addEventListener('click', function () {
-    popupNameInput.value = popupNameInput.textContent;
-    popupAboutInput.value = popupAboutInput.textContent;
+    popupNameInput.value = profileName.textContent;
+    popupAboutInput.value = profileAbout.textContent;
     openPopup(popupProfile);
 })
 btnAddNewCard.addEventListener('click', () => openPopup(popupAddCard));
@@ -55,14 +55,14 @@ function addInitialCards(initialCards) {
     })
 }
 
-
 /*добавление карточки*/
 function submitNewCard(evt) {
     evt.preventDefault();
     elements.prepend(createCard(popupAddCardName.value, popupAddCardLink.value));
     closePopup(popupAddCard);
     addCard.reset();
-
+    cardBtnSubmit.classList.add('popup__button_type_disabled');
+    cardBtnSubmit.disabled = true;
 }
 
 /*Коммит профиля*/
@@ -70,8 +70,10 @@ function submitProfileEdit(evt) {
     evt.preventDefault();
     profileName.textContent = popupNameInput.value;
     profileAbout.textContent = popupAboutInput.value;
-
     closePopup(popupProfile);
+    
+    profileBtnSubmit.classList.add('popup__button_type_disabled');
+    profileBtnSubmit.disabled = true;
 }
 
 popupProfile.addEventListener('submit', submitProfileEdit);
