@@ -3,10 +3,14 @@ import {
     handleNewCardSubmit,
     renderInitialCards,
     confirmRemove
-
 } from "../src/components/card.js";
 
-import { getProfileInfo, getCards, editProfile, updateAvatar } from './components/api.js';
+import {
+    getProfileInfo,
+    getCards,
+    editProfile,
+    updateAvatar
+} from './components/api.js';
 
 import {
     openPopup,
@@ -61,7 +65,7 @@ function handleProfileEditSubmit(event) {
             console.log(err);
         })
         .finally(() => {
-            addProfile.elements.submit.textContent = 'Сохранить';
+            formEditProfile.elements.submit.textContent = 'Сохранить';
         })
 }
 
