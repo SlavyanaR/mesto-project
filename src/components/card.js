@@ -13,6 +13,10 @@ import {
 import { addCard, removeCard, addLikeCard, removeLikeCard } from '../components/api.js';
 import { profileId } from '../index.js';
 
+const cardElement = document.querySelector('.elements');
+const cardTemplate = document.querySelector('#card-template').content;
+let cardElementDelete;
+let cardElementId;
 
 const popupNameInput = document.querySelector('.popup__input_type_name');
 const popupAboutInput = document.querySelector('.popup__input_type_about');
@@ -20,39 +24,9 @@ const popupAddCardName = popupAddCard.querySelector('.popup__input_type_title');
 const popupAddCardLink = popupAddCard.querySelector('.popup__input_type_link');
 const elements = document.querySelector('.elements');
 
-const cardTemplate = document.querySelector('#card-template').content;
-const elementList = document.querySelector('.elements');
-let cardElementDelete;
-let cardElementId;
-
-const initialCards = [{
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-},
-{
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-},
-{
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-},
-{
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-},
-{
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-},
-{
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-}
-];
 
 /*создаем шаблон карточки*/
-function createCard(cardName, cardImage, cardId, cardOwner, cardLikes) {
+function createCard(cardImage, cardName, cardId, cardOwner, cardLikes) {
     const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
     const cardElementImage = cardElement.querySelector('.element__image');
     const cardLike = cardElement.querySelector('.element__button');
@@ -77,8 +51,6 @@ function createCard(cardName, cardImage, cardId, cardOwner, cardLikes) {
     }
 
     /*удаление карточки*/
-
-
     if (cardOwner === profileId) {
         btnDeleteCard(cardElement);
 
@@ -113,8 +85,30 @@ export function confirmRemove(card) {
       })
   }
   
-
-
+  function likeCard(cardElement, cardLikeCount, cardId) {
+    cardElement.querySelector('.element__button').addEventListener('click', function (event) {
+      if (!event.target.classList.contains('element__button_active')) {
+        addLikeCard(cardId)
+          .then((card) => {
+            event.target.classList.toggle('element__button_active');
+            cardLikeCount.textContent = card.likes.length;
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+  
+      } else {
+        removeLikeCard(cardId)
+          .then((card) => {
+            event.target.classList.toggle('element__button_active');
+            cardLikeCount.textContent = card.likes.length;
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+      }
+    })
+  }
 
 function btnDeleteCard(cardElement) {
     const btnDelete = document.createElement('button');
@@ -124,4 +118,32 @@ function btnDeleteCard(cardElement) {
     return btnDeleteCard;
 }
 
-export { createCard, initialCards }
+/*перебираем массив с карточками*/
+function renderInitialCards(initialCards) {
+    initialCards.forEach((card) => {
+      elementList.append(createCard(card.link, card.name, card._id, card.owner._id, card.likes));
+    })
+  }
+
+  /*добавление карточки из формы*/
+  function handleNewCardSubmit(event) {
+    event.preventDefault();
+    formAddCard.elements.submit.textContent = 'Сохранение...';
+    addCard(formAddCard.elements.name.value, formAddCard.elements.image.value)
+      .then((card) => {
+        console.log(card);
+        elementList.prepend(createCard(formAddCard.elements.image.value, formAddCard.elements.name.value, card._id, card.owner._id, card.likes));
+        closePopup(popupAddCard);
+        formAddCard.reset();
+        formAddCard.elements.submit.classList.add('popup__button_type_disabled');
+        formAddCard.elements.submit.disabled = true;
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        formAddCard.elements.submit.textContent = 'Создать';
+      })
+    }
+
+export { handleNewCardSubmit, renderInitialCards }
