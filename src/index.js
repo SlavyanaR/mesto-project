@@ -85,7 +85,7 @@ function handleAvatarEditSubmit(event) {
             formAvatar.elements.submit.textContent = 'Сохранить';
         })
 }
-
+debugger;
 formAvatar.addEventListener('submit', handleAvatarEditSubmit);
 addProfile.addEventListener('submit', handleProfileEditSubmit);
 formAddCard.addEventListener('submit', handleNewCardSubmit);
