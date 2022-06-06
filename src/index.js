@@ -1,6 +1,10 @@
 import './pages/index.css';
-import { createCard,
-    initialCards } from "../src/components/card.js";
+import {
+    createCard,
+    initialCards
+} from "../src/components/card.js";
+
+import { getProfileInfo, getCards, editProfile, updateAvatar } from './components/api.js';
 
 import {
     openPopup,
@@ -9,7 +13,9 @@ import {
     popuViewImage,
     popupViewDescription,
     popupAddCard,
-    popupProfile
+    popupProfile,
+    popupAvatar,
+    popupDeleteBtn
 } from './components/modal.js';
 
 import {
@@ -24,6 +30,8 @@ import {
     formAvatar,
     formAddCard
 } from './components/utils.js';
+
+export let profileId = "";
 
 const popupBtnClose = document.querySelector('.popup__button_type_close');
 const popupNameInput = document.querySelector('.popup__input_type_name');
@@ -71,7 +79,7 @@ function submitProfileEdit(evt) {
     profileName.textContent = popupNameInput.value;
     profileAbout.textContent = popupAboutInput.value;
     closePopup(popupProfile);
-    
+
     profileBtnSubmit.classList.add('popup__button_type_disabled');
     profileBtnSubmit.disabled = true;
 }

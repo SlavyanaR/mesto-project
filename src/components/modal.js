@@ -3,6 +3,11 @@ const popuViewImage = popupView.querySelector('.popup__image');
 const popupViewDescription = popupView.querySelector('.popup__description');
 const popupAddCard = document.querySelector('.popup_open-card');
 const popupProfile = document.querySelector('.popup_open-profile');
+const popupAvatar = document.querySelector('.popup__profile');
+const popupDelete = document.querySelector('.popup__delete');
+const popupDeleteBtn = document.querySelector('.popup__button_type_confirm');
+
+
 
 /*1.1 открытие popup*/
 function openPopup(popup) {
@@ -43,5 +48,8 @@ export {
   popuViewImage,
   popupViewDescription,
   popupAddCard,
-  popupProfile
+  popupProfile,
+  popupAvatar,
+  popupDelete,
+  popupDeleteBtn
 }
