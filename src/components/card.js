@@ -13,7 +13,7 @@ import {
 import { addCard, removeCard, addLikeCard, removeLikeCard } from '../components/api.js';
 import { profileId } from '../index.js';
 
-const cardElement = document.querySelector('.elements');
+const elementList  = document.querySelector('.elements');
 const cardTemplate = document.querySelector('#card-template').content;
 let cardElementDelete;
 let cardElementId;
@@ -121,7 +121,7 @@ function btnDeleteCard(cardElement) {
 /*перебираем массив с карточками*/
 function renderInitialCards(initialCards) {
     initialCards.forEach((card) => {
-      elementList.append(createCard(card.link, card.name, card._id, card.owner._id, card.likes));
+        elementList.append(createCard(card.link, card.name, card._id, card.owner._id, card.likes));
     })
   }
 
