@@ -54,9 +54,9 @@ function createCard(cardImage, cardName, cardId, cardOwner, cardLikes) {
     if (cardOwner === profileId) {
         btnDeleteCard(cardElement);
 
-        const cardElementDelete = cardElement.querySelector(".element__delete");
+        const cardElementDeleteBtn = cardElement.querySelector(".element__delete");
 
-        cardElementDelete.addEventListener("click", (evt) => {
+        cardElementDeleteBtn.addEventListener("click", (evt) => {
             cardElementDelete = evt.target.closest(".element");
             cardElementId = cardId;
             openPopup(popupDelete);
@@ -129,10 +129,10 @@ function renderInitialCards(initialCards) {
   function handleNewCardSubmit(event) {
     event.preventDefault();
     formAddCard.elements.submit.textContent = 'Сохранение...';
-    addCard(formAddCard.elements.name.value, formAddCard.elements.image.value)
+    addCard(formAddCard.elements.name.value, formAddCard.elements.link_image.value)
       .then((card) => {
         console.log(card);
-        elementList.prepend(createCard(formAddCard.elements.image.value, formAddCard.elements.name.value, card._id, card.owner._id, card.likes));
+        elementList.prepend(createCard(formAddCard.elements.link_image.value, formAddCard.elements.name.value, card._id, card.owner._id, card.likes));
         closePopup(popupAddCard);
         formAddCard.reset();
         formAddCard.elements.submit.classList.add('popup__button_type_disabled');

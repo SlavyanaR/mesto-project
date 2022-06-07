@@ -57,8 +57,8 @@ function handleProfileEditSubmit(event) {
     formEditProfile.elements.submit.textContent = 'Сохранение...';
     editProfile(formEditProfile.elements.name.value, formEditProfile.elements.about.value)
         .then(() => {
-            profileName.textContent = formEditProfile.elements.userName.value;
-            profileAbout.textContent = formEditProfile.elements.userAbout.value;
+            profileName.textContent = formEditProfile.elements.name.value;
+            profileAbout.textContent = formEditProfile.elements.about.value;
             closePopup(popupProfile);
             addProfile.reset();
         })
@@ -93,8 +93,8 @@ formAddCard.addEventListener('submit', handleNewCardSubmit);
 
 
 profileEditBtn.addEventListener('click', function () {
-    formEditProfile.elements.userName.value = profileName.textContent;
-    formEditProfile.elements.userAbout.value = profileAbout.textContent;
+    formEditProfile.elements.name.value = profileName.textContent;
+    formEditProfile.elements.about.value = profileAbout.textContent;
     openPopup(popupProfile);
 })
 btnAddNewCard.addEventListener('click', () => openPopup(popupAddCard));

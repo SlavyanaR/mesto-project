@@ -1,27 +1,26 @@
-.popup__change {
+.profile__change {
     position: relative;
-    margin: 0 30px 0 0;
 }
 
-.popup__change::before {
+.profile__change::before {
     content: '';
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
-    background: url(../../../image/EditButton.svg) center center no-repeat;
+    background: url(../../../image/EditButton2.svg) center center no-repeat;
     background-size: 26px 26px;
     background-color: rgba(0, 0, 0, 0.8);
     cursor: pointer;
     visibility: hidden;
 }
 
-.popup__change:hover::before {
+.profile__change:hover::before {
     visibility: visible;
 }
 
 @media screen and (max-width: 767px) {
-    .popup__change {
+    .profile__change {
         margin: 0 0 26px 0;
     }
 }
