@@ -18,12 +18,6 @@ const cardTemplate = document.querySelector('#card-template').content;
 let cardElementDelete;
 let cardElementId;
 
-const popupNameInput = document.querySelector('.popup__input_type_name');
-const popupAboutInput = document.querySelector('.popup__input_type_about');
-const popupAddCardName = popupAddCard.querySelector('.popup__input_type_title');
-const popupAddCardLink = popupAddCard.querySelector('.popup__input_type_link');
-const elements = document.querySelector('.elements');
-
 
 /*создаем шаблон карточки*/
 function createCard(cardImage, cardName, cardId, cardOwner, cardLikes) {

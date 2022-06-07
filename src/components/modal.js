@@ -7,8 +7,6 @@ const popupAvatar = document.querySelector('.popup__profile');
 const popupDelete = document.querySelector('.popup__delete');
 const popupDeleteBtn = document.querySelector('.popup__button_type_confirm');
 
-
-
 /*1.1 открытие popup*/
 function openPopup(popup) {
   popup.classList.add('popup_opened');
