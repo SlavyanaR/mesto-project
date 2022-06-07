@@ -32,7 +32,8 @@ import {
     btnAddNewCard,
     formEditProfile,
     formAvatar,
-    formAddCard
+    formAddCard,
+    profileChange
 } from './components/utils.js';
 
 export let profileId = "";
@@ -56,8 +57,8 @@ function handleProfileEditSubmit(event) {
     formEditProfile.elements.submit.textContent = 'Сохранение...';
     editProfile(formEditProfile.elements.name.value, formEditProfile.elements.about.value)
         .then(() => {
-            profileName.textContent = formEditProfile.elements.name.value;
-            profileAbout.textContent = formEditProfile.elements.about.value;
+            profileName.textContent = formEditProfile.elements.userName.value;
+            profileAbout.textContent = formEditProfile.elements.userAbout.value;
             closePopup(popupProfile);
             addProfile.reset();
         })
@@ -98,5 +99,5 @@ profileEditBtn.addEventListener('click', function () {
 })
 btnAddNewCard.addEventListener('click', () => openPopup(popupAddCard));
 
-profile.addEventListener('click', () => openPopup(popupProfile));
+profileChange.addEventListener('click', () => openPopup(popupAvatar));
 popupDeleteBtn.addEventListener("click", confirmRemove);

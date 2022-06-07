@@ -2,6 +2,7 @@ import { enableValidation } from '../components/validate.js';
 import { popupProfile } from '../components/modal.js';
 
 const profileEditBtn = document.querySelector('.profile__edit-button');
+const profileChange = document.querySelector('.profile__change');
 const profile = document.querySelector('.profile');
 const profileAvatar = document.querySelector('.profile__avatar');
 const profileName = document.querySelector('.profile__name');
@@ -42,5 +43,6 @@ export {
     formEditProfile,
     formAvatar,
     formAddCard,
-    apiConfig
+    apiConfig,
+    profileChange
 }

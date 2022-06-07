@@ -14,7 +14,10 @@
     </header>
     <main class="main">
         <section class="profile">
-            <img src="<%=require('../src/image/kusto.jpg')%>" alt="Аватар профиля" class="profile__avatar">
+            <div class="profile__change">
+                <img src="<%=require('../src/image/kusto.jpg')%>" alt="Аватар профиля" class="profile__avatar">
+            </div>
+
             <div class="profile__info">
                 <div class="profile__group">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -89,18 +92,20 @@
         </div>
     </div>
 
-    <div class="popup popup__profile">
+    /*<div class="popup popup__profile">*/
         <div class="popup__container">
             <h2 class="popup__title">Обновить аватар</h2>
+
             <form action="#" class="form" name="avatar" novalidate>
                 <input id="profile-url" type="url" class="popup__input popup__input_type_profile-link" name="link"
                     placeholder="Ссылка" required>
                 <span class="popup__input-error profile-url-error"></span>
                 <button type="submit" class="popup__button popup__button_type_submit" Сохранить></button>
             </form>
+            
             <button type="button" class="popup__button popup__button_type_close"></button>
         </div>
-    </div>
+    </div>*/
 
     <template id="card-template">
         <li class="element">
