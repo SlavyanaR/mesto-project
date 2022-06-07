@@ -92,11 +92,11 @@ formAddCard.addEventListener('submit', handleNewCardSubmit);
 
 
 profileEditBtn.addEventListener('click', function () {
-    formEditProfile.elements.name.value = profileName.textContent;
-    formEditProfile.elements.about.value = profileAbout.textContent;
+    formEditProfile.elements.userName.value = profileName.textContent;
+    formEditProfile.elements.userAbout.value = profileAbout.textContent;
     openPopup(popupProfile);
 })
 btnAddNewCard.addEventListener('click', () => openPopup(popupAddCard));
 
-profile.addEventListener('click', () => openPopup(popupAvatar));
+profile.addEventListener('click', () => openPopup(popupProfile));
 popupDeleteBtn.addEventListener("click", confirmRemove);
